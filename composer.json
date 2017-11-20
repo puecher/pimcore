@@ -83,6 +83,7 @@
     "guzzlehttp/guzzle": "~6.0",
     "hybridauth/hybridauth": "~2",
     "linfo/linfo": "~3",
+    "mjaschen/phpgeo": "^2.0",
     "monolog/monolog": "~1",
     "mpratt/embera": "~1",
     "myclabs/deep-copy": "~1.3",
