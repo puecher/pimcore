@@ -1,5 +1,21 @@
 # Upgrade Notes for Upgrades within Pimcore 5
 
+## Pimcore 5.1
+
+* **\[E-Commerce\]** Due to performance reasons, we needed to change the way how index service attributes are handled. They are
+  now built at runtime instead of handling each attribute as service. To achieve this, config service definition now relies
+  on the method `setAttributeFactory` being called creating a service instance. If your config definition uses `Pimcore\Bundle\EcommerceFrameworkBundle\IndexService\Config\AbstractConfig`
+  as parent definition you should be set, otherwise you'll need to make sure your service definition includes the method
+  call:
+
+  ```yaml
+  services:
+      AppBundle\IndexService\Config\CustomConfig:
+          # [...]
+          calls:
+              - [setAttributeFactory, ['@Pimcore\Bundle\EcommerceFrameworkBundle\IndexService\Config\AttributeFactory']]
+  ```
+
 ## Build 149 (2017-11-14)
 
 The Piwik integration which was recently added was refactored to always use a full URI including the protocol for the Piwik
