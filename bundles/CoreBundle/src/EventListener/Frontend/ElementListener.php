@@ -221,6 +221,7 @@ class ElementListener implements EventSubscriberInterface, LoggerAwareInterface
 
         if ($request->query->has('pimcore_studio_preview')) {
             $this->handleStudioPreview($request->query->getInt('pimcore_object_preview'), $user);
+
             return;
         }
 
@@ -246,7 +247,7 @@ class ElementListener implements EventSubscriberInterface, LoggerAwareInterface
     {
         $object = $this->getLatestVersion($id, $user);
         if (!$object instanceof Concrete) {
-           return;
+            return;
         }
 
         $this->logObjectLoading(
