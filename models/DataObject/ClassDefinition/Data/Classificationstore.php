@@ -1045,7 +1045,7 @@ class Classificationstore extends Data implements CustomResourcePersistingInterf
                     if (!$groupConfig) {
                         continue;
                     }
-                    
+
                     $result[$groupConfig->getName()] = [];
 
                     $relation = new DataObject\Classificationstore\KeyGroupRelation\Listing();
