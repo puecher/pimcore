@@ -370,6 +370,7 @@ class DateRange extends Data implements
             ];
         }
     }
+
     public function marshalVersion(Concrete $object, mixed $data): mixed
     {
         return $data;
@@ -377,6 +378,6 @@ class DateRange extends Data implements
 
     public function unmarshalVersion(Concrete $object, mixed $data): mixed
     {
-       return $data;
+        return $data;
     }
 }

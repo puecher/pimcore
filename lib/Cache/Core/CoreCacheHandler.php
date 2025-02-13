@@ -19,8 +19,6 @@ namespace Pimcore\Cache\Core;
 use Carbon\CarbonPeriod;
 use Closure;
 use DateInterval;
-use DatePeriod;
-use DeepCopy\TypeFilter\ReplaceFilter;
 use DeepCopy\TypeFilter\TypeFilter;
 use DeepCopy\TypeMatcher\TypeMatcher;
 use Pimcore\Event\CoreCacheEvents;
