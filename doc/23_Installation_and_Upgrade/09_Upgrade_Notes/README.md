@@ -4,6 +4,9 @@
 #### [Bundle]
 - Removed compatibility layer static `$bundleManager`
 
+#### [Commands]
+- Removed deprecated option `generator` from `Pimcore\Bundle\CoreBundle\Command\LowQualityImagePreviewCommand`.
+
 #### [Documents]
 - Date Editable: Removed deprecated outputFormat config. Use outputIsoFormat config instead.
 
