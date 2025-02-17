@@ -19,6 +19,9 @@
 - Removed deprecated class `Pimcore\Helper\CsvFormulaFormatter`. Use `\League\Csv\EscapeFormula` instead.
 - Removed deprecated `getCachedSymfonyEnvironments()` method from `Pimcore\Tool`.
 
+#### [Mail]
+- If sender is not set in the mail, instead of setting a default `from` address, an exception is now thrown.
+
 #### [Navigation]
 - Remove deprecated `$_defaultPageType` from `Pimcore\Navigation\Page`.
 
