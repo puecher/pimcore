@@ -25,6 +25,9 @@
 #### [Navigation]
 - Remove deprecated `$_defaultPageType` from `Pimcore\Navigation\Page`.
 
+#### [Templates]
+- Removed `key_value_table.html.twig` from `CoreBundle`
+
 ## Pimcore 11.6.0
 ### Elements
 #### [Documents]
