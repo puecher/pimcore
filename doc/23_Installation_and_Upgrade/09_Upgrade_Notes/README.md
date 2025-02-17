@@ -9,6 +9,9 @@
 - Parameter `$index` of method `setIndex` is not nullable anymore in `Pimcore\Model\DataObject\ClassDefinition\Data`
 - Removed deprecated `getThumbnailConfig()` method from `Pimcore\Model\Asset\Image`.
 
+#### [Lib]
+- Removed deprecated class `Pimcore\Helper\CsvFormulaFormatter`. Use `\League\Csv\EscapeFormula` instead. 
+
 ## Pimcore 11.6.0
 ### Elements
 #### [Documents]
