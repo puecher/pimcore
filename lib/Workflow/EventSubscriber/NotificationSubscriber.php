@@ -63,8 +63,7 @@ class NotificationSubscriber implements EventSubscriberInterface
         TranslatorInterface $translator,
         ExpressionService $expressionService,
         Manager $workflowManager
-    )
-    {
+    ) {
         $this->mailService = $mailService;
         $this->pimcoreNotificationService = $pimcoreNotificationService;
         $this->translator = $translator;
@@ -82,7 +81,6 @@ class NotificationSubscriber implements EventSubscriberInterface
         $subject = $event->getSubject();
         /** @var Transition $transition */
         $transition = $event->getTransition();
-
 
         $workflow = $this->workflowManager->getWorkflowByName($event->getWorkflowName());
 
@@ -134,8 +132,7 @@ class NotificationSubscriber implements EventSubscriberInterface
         string $mailPath,
         array $notifyUsers,
         array $notifyRoles
-    ): void
-    {
+    ): void {
         //notify users
         $subjectType = ($subject instanceof Concrete ? $subject->getClassName() : Service::getElementType($subject));
 
@@ -157,8 +154,7 @@ class NotificationSubscriber implements EventSubscriberInterface
         ElementInterface $subject,
         array $notifyUsers,
         array $notifyRoles
-    ): void
-    {
+    ): void {
         $subjectType = ($subject instanceof Concrete ? $subject->getClassName() : Service::getElementType($subject));
         $this->pimcoreNotificationService->sendPimcoreNotification(
             $notifyUsers,

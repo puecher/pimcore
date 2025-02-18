@@ -62,8 +62,7 @@ class NotificationEmailService extends AbstractNotificationService
         string $action,
         string $mailType,
         string $mailPath
-    ): void
-    {
+    ): void {
         try {
             $recipients = $this->getNotificationUsersByName($users, $roles);
             if (!count($recipients)) {
@@ -140,8 +139,7 @@ class NotificationEmailService extends AbstractNotificationService
         string $language,
         string $mailPath,
         string $deeplink
-    ): void
-    {
+    ): void {
         $mail = new Mail(
             [
                 'document' => $mailPath,
@@ -152,7 +150,7 @@ class NotificationEmailService extends AbstractNotificationService
                     $action,
                     $deeplink,
                     $language
-                )
+                ),
             ]
         );
 
@@ -175,8 +173,7 @@ class NotificationEmailService extends AbstractNotificationService
         string $language,
         string $mailPath,
         string $deeplink
-    ): void
-    {
+    ): void {
         $mail = new Mail();
 
         foreach ($recipients as $user) {
@@ -205,8 +202,7 @@ class NotificationEmailService extends AbstractNotificationService
         string $language,
         string $mailPath,
         string $deeplink
-    ): string
-    {
+    ): string {
         $translatorLocaleBackup = null;
         if ($this->translator instanceof LocaleAwareInterface) {
             $translatorLocaleBackup = $this->translator->getLocale();
@@ -234,8 +230,7 @@ class NotificationEmailService extends AbstractNotificationService
         string $action,
         string $deeplink,
         string $language
-    ): array
-    {
+    ): array {
         $noteDescription = $this->getNoteInfo($subject->getId());
 
         return [

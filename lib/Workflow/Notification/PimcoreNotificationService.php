@@ -46,8 +46,7 @@ class PimcoreNotificationService extends AbstractNotificationService
         string $subjectType,
         ElementInterface $subject,
         string $action
-    ): void
-    {
+    ): void {
         try {
             $recipients = $this->getNotificationUsersByName($users, $roles, true);
             if (!count($recipients)) {
