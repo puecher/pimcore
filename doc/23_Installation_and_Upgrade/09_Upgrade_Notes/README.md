@@ -15,6 +15,9 @@
 - Parameter `$index` of method `setIndex` is not nullable anymore in `Pimcore\Model\DataObject\ClassDefinition\Data`.
 - Removed deprecated `getThumbnailConfig()` method from `Pimcore\Model\Asset\Image`.
 
+### [Events]
+- Removed `context` property of `ResolveUploadTargetEvent`.
+
 #### [Lib]
 - Removed deprecated class `Pimcore\Helper\CsvFormulaFormatter`. Use `\League\Csv\EscapeFormula` instead.
 - Removed deprecated `getCachedSymfonyEnvironments()` method from `Pimcore\Tool`.
