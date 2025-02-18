@@ -32,6 +32,9 @@
 #### [Navigation]
 - Remove deprecated `$_defaultPageType` from `Pimcore\Navigation\Page`.
 
+#### [Select Options]
+- Add 'Admin only' configuration to restrict access to admin users
+
 #### [Templates]
 - Removed `key_value_table.html.twig` from `CoreBundle`
 
