@@ -203,20 +203,20 @@ class Manager
         return $workflow;
     }
 
-    /**
-     * @deprecated will return ?WorkflowInterface in 12.0.0
-     */
-    public function getWorkflowByName(string $workflowName): ?object
+    public function getWorkflowByName(string $workflowName): ?WorkflowInterface
     {
         $config = $this->getWorkflowConfig($workflowName);
 
-        return Pimcore::getContainer()->get($config->getType() . '.' . $workflowName);
+        $workflow = Pimcore::getContainer()?->get($config->getType() . '.' . $workflowName);
+
+        if (!$workflow instanceof WorkflowInterface) {
+            return null;
+        }
+
+        return $workflow;
     }
 
     /**
-     *
-     *
-     * @throws ValidationException
      * @throws Exception
      */
     public function applyWithAdditionalData(
