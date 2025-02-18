@@ -26,6 +26,7 @@ class ResolveUploadTargetEvent extends Event
     protected string $filename;
 
     protected int $parentId;
+
     public function __construct(int $parentId, string $filename)
     {
         $this->parentId = $parentId;
