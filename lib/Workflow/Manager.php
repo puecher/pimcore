@@ -203,6 +203,9 @@ class Manager
         return $workflow;
     }
 
+    /**
+     * @deprecated will return ?WorkflowInterface in 12.0.0
+     */
     public function getWorkflowByName(string $workflowName): ?object
     {
         $config = $this->getWorkflowConfig($workflowName);
