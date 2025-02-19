@@ -17,7 +17,6 @@ declare(strict_types=1);
 namespace Pimcore\Bundle\CustomReportsBundle\Tool\Adapter;
 
 use Exception;
-use Pimcore\Bundle\CustomReportsBundle\Tool\Config\ColumnInformation;
 use Pimcore\Db;
 use stdClass;
 

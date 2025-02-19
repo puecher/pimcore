@@ -49,7 +49,7 @@ abstract class AbstractAdapter implements CustomReportAdapterInterface
         $columnsWithMetadata = [];
         $columns = $this->getColumns($configuration);
 
-        foreach($columns as $column) {
+        foreach ($columns as $column) {
             $columnsWithMetadata[] = new ColumnInformation(
                 $column,
                 false,

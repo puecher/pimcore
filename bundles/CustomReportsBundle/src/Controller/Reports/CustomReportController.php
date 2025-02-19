@@ -236,7 +236,7 @@ class CustomReportController extends UserAwareController
 
             foreach ($columnConfiguration as $item) {
                 $name = $item['name'];
-                if(array_key_exists($name, $columnMap)) {
+                if (array_key_exists($name, $columnMap)) {
                     $result[] = $columnMap[$name];
                     unset($columnMap[$name]);
                 }
