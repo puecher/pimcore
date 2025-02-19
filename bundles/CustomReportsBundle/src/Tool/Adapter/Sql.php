@@ -17,6 +17,7 @@ declare(strict_types=1);
 namespace Pimcore\Bundle\CustomReportsBundle\Tool\Adapter;
 
 use Exception;
+use Pimcore\Bundle\CustomReportsBundle\Tool\Config\ColumnInformation;
 use Pimcore\Db;
 use stdClass;
 
@@ -25,8 +26,15 @@ use stdClass;
  */
 class Sql extends AbstractAdapter
 {
-    public function getData(?array $filters, ?string $sort, ?string $dir, ?int $offset, ?int $limit, ?array $fields = null, ?array $drillDownFilters = null): array
-    {
+    public function getData(
+        ?array $filters,
+        ?string $sort,
+        ?string $dir,
+        ?int $offset,
+        ?int $limit,
+        ?array $fields = null,
+        ?array $drillDownFilters = null
+    ): array {
         $db = Db::get();
 
         $baseQuery = $this->getBaseQuery($filters ?? [], $fields ?? [], false, $drillDownFilters ?? []);
