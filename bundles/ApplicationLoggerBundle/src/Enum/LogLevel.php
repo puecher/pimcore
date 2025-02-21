@@ -29,17 +29,19 @@ enum LogLevel: int
     case Info = 6;
     case Debug = 7;
 
-    public static function getLogLevel(string|int $value): self {
-        if(is_int($value)) {
+    public static function getLogLevel(string|int $value): self
+    {
+        if (is_int($value)) {
             $enum = static::tryFrom($value);
-            if($enum !== null) {
+            if ($enum !== null) {
                 return $enum;
             }
+
             throw new LogLevelNotFoundException();
         }
 
-        foreach(static::cases() as $case) {
-            if($case->name === $value) {
+        foreach (static::cases() as $case) {
+            if ($case->name === $value) {
                 return $case;
             }
         }
