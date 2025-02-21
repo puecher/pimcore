@@ -24,6 +24,9 @@ use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
 
 class PimcoreApplicationLoggerExtension extends Extension implements PrependExtensionInterface
 {
+    /**
+     * @throws \Exception
+     */
     public function load(array $configs, \Symfony\Component\DependencyInjection\ContainerBuilder $container): void
     {
         $loader = new YamlFileLoader(
