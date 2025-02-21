@@ -86,8 +86,7 @@ class ApplicationLogger implements LoggerInterface
         int|string|Level|array $minLevelOrList = Level::Debug,
         int|string|Level $maxLevel = Level::Emergency,
         bool $bubble = true
-    ): void
-    {
+    ): void {
         if ($writer instanceof LoggerInterface) {
             $this->loggers[] = $writer;
 
