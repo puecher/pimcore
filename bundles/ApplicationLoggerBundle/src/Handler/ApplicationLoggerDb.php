@@ -21,6 +21,7 @@ use Doctrine\DBAL\Connection;
 use Monolog\Handler\AbstractProcessingHandler;
 use Monolog\Level;
 use Monolog\LogRecord;
+use Pimcore\Bundle\ApplicationLoggerBundle\Enum\LogLevel;
 use Pimcore\Db;
 
 class ApplicationLoggerDb extends AbstractProcessingHandler
@@ -64,32 +65,5 @@ class ApplicationLoggerDb extends AbstractProcessingHandler
         $components = $db->fetchFirstColumn('SELECT component FROM ' . self::TABLE_NAME . ' WHERE NOT ISNULL(component) GROUP BY component;');
 
         return $components;
-    }
-
-    /**
-     * @return string[]
-     */
-    public static function getPriorities(): array
-    {
-        $priorities = [];
-        $priorityNames = [
-            'debug' => 'DEBUG',
-            'info' => 'INFO',
-            'notice' => 'NOTICE',
-            'warning' => 'WARN',
-            'error' => 'ERR',
-            'critical' => 'CRIT',
-            'alert' => 'ALERT',
-            'emergency' => 'EMERG',
-        ];
-
-        $db = Db::get();
-
-        $priorityNumbers = $db->fetchFirstColumn('SELECT priority FROM ' . self::TABLE_NAME . ' WHERE NOT ISNULL(priority) GROUP BY priority;');
-        foreach ($priorityNumbers as $priorityNumber) {
-            $priorities[$priorityNumber] = $priorityNames[$priorityNumber];
-        }
-
-        return $priorities;
     }
 }
