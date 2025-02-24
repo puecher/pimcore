@@ -21,7 +21,6 @@ use Doctrine\DBAL\Connection;
 use Monolog\Handler\AbstractProcessingHandler;
 use Monolog\Level;
 use Monolog\LogRecord;
-use Pimcore\Bundle\ApplicationLoggerBundle\Enum\LogLevel;
 use Pimcore\Db;
 
 class ApplicationLoggerDb extends AbstractProcessingHandler

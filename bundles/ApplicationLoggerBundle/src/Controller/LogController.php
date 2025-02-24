@@ -58,8 +58,7 @@ class LogController extends UserAwareController implements KernelControllerEvent
         Request $request,
         Connection $db,
         TranslationServiceInterface $translationService
-    ): JsonResponse
-    {
+    ): JsonResponse {
         $requestSource = $request->request;
 
         $this->checkPermission('application_logging');
@@ -184,17 +183,16 @@ class LogController extends UserAwareController implements KernelControllerEvent
      */
     public function priorityJsonAction(
         TranslationServiceInterface $translationService
-    ): JsonResponse
-    {
+    ): JsonResponse {
         $this->checkPermission('application_logging');
 
         $priorities = $translationService->getTranslatedLogLevels();
         $priorities = [
             [
                 'key' => '',
-                'value' => '-'
+                'value' => '-',
             ],
-            ... $priorities
+            ... $priorities,
         ];
 
         return $this->jsonResponse(['priorities' => $priorities]);

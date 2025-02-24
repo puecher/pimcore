@@ -23,8 +23,7 @@ readonly class TranslationService implements TranslationServiceInterface
 {
     public function __construct(
         private TranslatorInterface $translator
-    )
-    {
+    ) {
     }
 
     public function getTranslatedLogLevels(): array
@@ -36,7 +35,7 @@ readonly class TranslationService implements TranslationServiceInterface
             $translatedValue = $this->getTranslatedLogLevel($logLevel->value);
             $translatedLogLevels[] = [
                 'key' => $logLevel->value,
-                'value' => $translatedValue
+                'value' => $translatedValue,
             ];
         }
 
