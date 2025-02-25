@@ -53,7 +53,7 @@ class GotenbergHelper
         } catch (Exception $e) {
             // nothing to do
         }
-    
+
         return false;
     }
 }
