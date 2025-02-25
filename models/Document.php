@@ -652,7 +652,6 @@ class Document extends Element\AbstractElement
             //clear parent data from registry
             $parentCacheKey = self::getCacheKey($this->getParentId());
             if (RuntimeCache::isRegistered($parentCacheKey)) {
-                /** @var Document $parent */
                 $parent = RuntimeCache::get($parentCacheKey);
                 if ($parent instanceof self) {
                     $parent->setChildren(null);
@@ -919,7 +918,7 @@ class Document extends Element\AbstractElement
      */
     public function setParent(?ElementInterface $parent): static
     {
-        /** @var Document $parent */
+        /** @var Pimcore\Model\Element\AbstractElement $parent */
         $this->parent = $parent;
         if ($parent instanceof Document) {
             $this->parentId = $parent->getId();
