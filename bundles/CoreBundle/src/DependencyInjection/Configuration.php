@@ -134,7 +134,6 @@ final class Configuration implements ConfigurationInterface
         $this->addTemplatingEngineNode($rootNode);
         $this->addGotenbergNode($rootNode);
         $this->addDependencyNode($rootNode);
-        $this->addChromiumNode($rootNode);
         $storageNode = ConfigurationHelper::addConfigLocationWithWriteTargetNodes($rootNode, [
             'image_thumbnails' => PIMCORE_CONFIGURATION_DIRECTORY . '/image_thumbnails',
             'video_thumbnails' => PIMCORE_CONFIGURATION_DIRECTORY . '/video_thumbnails',
@@ -2071,24 +2070,5 @@ final class Configuration implements ConfigurationInterface
                 ->end()
             ->end()
         ->end();
-    }
-
-    /**
-     * @deprecated
-     */
-    private function addChromiumNode(ArrayNodeDefinition $rootNode): void
-    {
-        $rootNode
-            ->children()
-                ->arrayNode('chromium')
-                    ->setDeprecated('pimcore/pimcore', '11.2', 'Chromium service is deprecated and will be removed in Pimcore 12. Use Gotenberg instead.')
-                    ->addDefaultsIfNotSet()
-                    ->children()
-                        ->scalarNode('uri')
-                            ->defaultNull()
-                        ->end()
-                    ->end()
-                ->end()
-            ->end();
     }
 }
