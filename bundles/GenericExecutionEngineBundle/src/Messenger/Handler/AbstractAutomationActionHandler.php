@@ -163,7 +163,6 @@ abstract class AbstractAutomationActionHandler
         string $value,
         array $variables
     ): mixed {
-        /** @var $matches array */
         if (!preg_match_all("/job_env\('([^']*)'\)/", $value, $matches)) {
             return $value;
         }
