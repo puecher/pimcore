@@ -170,7 +170,7 @@ abstract class Kernel extends SymfonyKernel
             } catch (LogicException) {
                 // Container is cleared. Allow tests to finish.
             }
-            if (isset($container) && $container instanceof ContainerInterface) {
+            if (isset($container)) {
                 $container->get('event_dispatcher')->dispatch(new GenericEvent(), SystemEvents::SHUTDOWN);
             }
             Pimcore::shutdown();
