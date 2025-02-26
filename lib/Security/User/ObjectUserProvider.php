@@ -17,7 +17,6 @@ declare(strict_types=1);
 namespace Pimcore\Security\User;
 
 use Pimcore\Model\DataObject\AbstractObject;
-use ReflectionClass;
 use Symfony\Component\Security\Core\Exception\InvalidArgumentException;
 use Symfony\Component\Security\Core\Exception\UnsupportedUserException;
 use Symfony\Component\Security\Core\Exception\UserNotFoundException;

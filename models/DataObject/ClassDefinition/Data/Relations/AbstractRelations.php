@@ -339,7 +339,6 @@ abstract class AbstractRelations extends Data implements
 
     /**
      * @param array|ElementInterface $data
-     * @param Localizedfield|AbstractData|DataObject\Objectbrick\Data\AbstractData|Concrete|null $object
      *
      * @internal
      */
