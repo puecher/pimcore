@@ -22,7 +22,6 @@ use Symfony\Component\Mime\MimeTypes;
 
 final class MimeTypeHelper implements MimeTypeHelperInterface
 {
-
     /**
      * @param string|resource $file
      */
@@ -53,14 +52,14 @@ final class MimeTypeHelper implements MimeTypeHelperInterface
         }
 
         $seekable = stream_get_meta_data($stream)['seekable'];
-        if($seekable) {
+        if ($seekable) {
             $fpPosition = ftell($stream);
             fseek($stream, 0);
         }
 
         $bytes = fread($stream, 1024);
 
-        if($seekable &&
+        if ($seekable &&
             $fpPosition !== false
         ) {
             fseek($stream, $fpPosition);

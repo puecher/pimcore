@@ -22,7 +22,6 @@ use League\Flysystem\FilesystemException;
 use League\Flysystem\FilesystemOperator;
 use League\Flysystem\UnableToMoveFile;
 use League\Flysystem\UnableToProvideChecksum;
-use League\Flysystem\UnableToRetrieveMetadata;
 use Pimcore;
 use Pimcore\Cache;
 use Pimcore\Cache\RuntimeCache;
@@ -57,7 +56,6 @@ use Pimcore\Tool\Storage;
 use stdClass;
 use Symfony\Component\EventDispatcher\GenericEvent;
 use Symfony\Component\Filesystem\Filesystem;
-use Symfony\Component\Mime\MimeTypes;
 
 /**
  * @method Dao getDao()
@@ -381,7 +379,7 @@ class Asset extends Element\AbstractElement
 
     private static function getImageSizeFromStream(mixed $stream): array
     {
-        if(!is_resource($stream)) {
+        if (!is_resource($stream)) {
             return [];
         }
         $size = getimagesizefromstring(
@@ -397,10 +395,9 @@ class Asset extends Element\AbstractElement
         // in an additional download from remote storage if configured, so in terms of performance
         // this is the more efficient way
         $maxPixels = (int)Config::getSystemConfiguration('assets')['image']['max_pixels'];
-        if(is_string($localPathOrStream)) {
+        if (is_string($localPathOrStream)) {
             $size = @getimagesize($localPathOrStream);
-        }
-        else {
+        } else {
             $size = self::getImageSizeFromStream($localPathOrStream);
         }
         if ($maxPixels && $size) {
