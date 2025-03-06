@@ -26,10 +26,10 @@ use Pimcore\Model\Element\ElementInterface;
 use Pimcore\Model\User;
 use Pimcore\Tool;
 use Pimcore\Workflow\EventSubscriber\NotificationSubscriber;
+use Pimcore\Workflow\Transition;
 use Symfony\Component\Routing\RouterInterface;
 use Symfony\Component\Templating\EngineInterface;
 use Symfony\Component\Workflow\WorkflowInterface;
-use Pimcore\Workflow\Transition;
 use Symfony\Contracts\Translation\LocaleAwareInterface;
 use Symfony\Contracts\Translation\TranslatorInterface;
 

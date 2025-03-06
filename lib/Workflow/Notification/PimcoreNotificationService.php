@@ -20,8 +20,8 @@ use Exception;
 use Pimcore\Logger;
 use Pimcore\Model\Element\ElementInterface;
 use Pimcore\Model\Notification\Service\NotificationService;
-use Symfony\Component\Workflow\WorkflowInterface;
 use Pimcore\Workflow\Transition;
+use Symfony\Component\Workflow\WorkflowInterface;
 use Symfony\Contracts\Translation\TranslatorInterface;
 
 class PimcoreNotificationService extends AbstractNotificationService
